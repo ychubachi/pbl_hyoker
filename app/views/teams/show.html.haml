@@ -1,14 +1,16 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @team.name
-%p
-  %b Github url:
-  = @team.github_url
-%p
-  %b Web url:
-  = @team.web_url
+%table{class: :table}
+  %tbody
+    %tr
+      %td Name:
+      %td= @team.name
+    %tr
+      %td Github url:
+      %td= @team.github_url
+    %tr
+      %td Web url:
+      %td= @team.web_url
 
 = link_to 'Edit', edit_team_path(@team)
 \|
