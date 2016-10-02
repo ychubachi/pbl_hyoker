@@ -1,19 +1,10 @@
-= form_for @team do |f|
-  - if @team.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@team.errors.count, "error")} prohibited this team from being saved:"
-      %ul
-        - @team.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(@team) do |f|
+  = f.error_notification
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :github_url
-    = f.text_field :github_url
-  .field
-    = f.label :web_url
-    = f.text_field :web_url
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :name
+    = f.input :github_url
+    = f.input :web_url
+
+  .form-actions
+    = f.button :submit
