@@ -14,8 +14,10 @@
     - @teams.each do |team|
       %tr
         %td= team.name
-        %td= team.github_url
-        %td= team.web_url
+        %td
+          %a{href: team.github_url, target: :_blank}= team.github_url
+        %td
+          %a{href: team.web_url,    target: :_blank}= team.web_url
         %td= link_to 'Show', team
         %td= link_to 'Edit', edit_team_path(team)
         %td= link_to 'Destroy', team, :method => :delete, :data => { :confirm => 'Are you sure?' }
